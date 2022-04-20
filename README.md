@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+Tania Rascia (React Tutorial: An Overview and Walkthrough)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React prerequisites.
+Basic familiarity with HTML & CSS.
+Basic knowledge of JavaScript and programming.
+Basic understanding of the DOM.
+Familiarity with ES6 syntax and features.
+Node.js and npm installed globally.
 
-## Available Scripts
+Goal:
+Learn about:
+	React: the React top level API
+	Babel: a JavaScript compiler that lets us use ES6+ in old browsers
+	DOM: adds DOM-specific methods
+	Webpack
+	JSX
+	components
+	props
+	state
+	lifecycle
+	
+1. Brief on app-setup and JSX:
+	
+Create React App: npx create-react-app react-tutorial
+	
+JSX: JavaScript + XML (extensible markup language)
+using JSX:
+const heading = <h1 className="site-heading">Hello, React</h1>
+without JSX:
+const heading = React.createElement('h1', {className: 'site-heading'}, 'Hello, React!')
 
-In the project directory, you can run:
+JSX is actually closer to JavaScript, not HTML, so there are a few key differences to note when writing it.
 
-### `npm start`
+className is used instead of class for adding CSS classes, as class is a reserved keyword in JavaScript.
+Properties and methods in JSX are camelCase - onclick will become onClick.
+Self-closing tags must end in a slash - e.g. <img />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Note:
+JavaScript expressions can also be embedded inside JSX using curly braces, including variables, functions, and properties.
+const name = 'Tania'
+const heading = <h1>Hello, {name}</h1>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+2. Components
+	-> class component
+	eg.
+		class ClassComponent extends Component {
+		  render() {
+			return <div>Example</div>
+		  }
+		}
+		
+	-> simple component(which is a function)
+	eg.
+		const SimpleComponent = () => {
+		  return <div>Example</div>
+		}
+		
+		
+Note: A class component must include render(),
+	and the return can only return one parent element.
+	
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Props
+	eg.
+		const TableBody = (props) => {
+		  const rows = props.characterData.map((row, index) => {
+			return (
+			  <tr key={index}>
+				<td>{row.name}</td>
+				<td>{row.job}</td>
+			  </tr>
+			)
+		  })
 
-### `npm run build`
+		  return <tbody>{rows}</tbody>
+		}
+		
+		class Table extends Component {
+		  render() {
+			const {characterData} = this.props
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+			return (
+			  <table>
+				<TableHeader />
+				<TableBody characterData={characterData} />
+			  </table>
+			)
+		  }
+		}
+	
+Note: You should always use keys when making lists in React, 
+as they help identify each list item.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. state
+	You must use this.setState() to modify an array. 
+	Simply applying a new value to this.state.property will not work.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Some useful example code:
+	removeCharacter = (index) => {
+	  const {characters} = this.state
 
-### `npm run eject`
+	  this.setState({
+		characters: characters.filter((character, i) => {
+		  return i !== index
+		}),
+	  })
+	}
+	
+	handleSubmit = (character) => {
+	  this.setState({characters: [...this.state.characters, character]})
+	}
+	
+5. Lifecycle methods:
+	https://reactjs.org/docs/react-component.html.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6. Building and Deploying a React App to gh-pages
+		-> inside package.json
+		-> "homepage": "https://rohit10000.github.io/handson-tania_rascia_react_tutorial",
+		-> "scripts": {
+			  // ...
+			  "predeploy": "npm run build",
+			  "deploy": "gh-pages -d build"
+			}
+		-> npm install --save-dev gh-pages
+		-> npm run build
+		-> npm run deploy
