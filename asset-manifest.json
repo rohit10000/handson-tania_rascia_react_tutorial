@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/handson-tania_rascia_react_tutorial/static/css/main.31d6cfe0.css",
+    "main.css": "/handson-tania_rascia_react_tutorial/static/css/main.8e1a694d.css",
     "main.js": "/handson-tania_rascia_react_tutorial/static/js/main.2995000f.js",
     "index.html": "/handson-tania_rascia_react_tutorial/index.html",
+    "main.8e1a694d.css.map": "/handson-tania_rascia_react_tutorial/static/css/main.8e1a694d.css.map",
     "main.2995000f.js.map": "/handson-tania_rascia_react_tutorial/static/js/main.2995000f.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
+    "static/css/main.8e1a694d.css",
     "static/js/main.2995000f.js"
   ]
 }
