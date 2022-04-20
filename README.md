@@ -1,13 +1,13 @@
-Tania Rascia (React Tutorial: An Overview and Walkthrough)
+## Tania Rascia (React Tutorial: An Overview and Walkthrough)
 
-React prerequisites.
+###React prerequisites.
 Basic familiarity with HTML & CSS.
 Basic knowledge of JavaScript and programming.
 Basic understanding of the DOM.
 Familiarity with ES6 syntax and features.
 Node.js and npm installed globally.
 
-Goal:
+###Goal:
 Learn about:
 	React: the React top level API
 	Babel: a JavaScript compiler that lets us use ES6+ in old browsers
@@ -25,10 +25,13 @@ Create React App: npx create-react-app react-tutorial
 	
 JSX: JavaScript + XML (extensible markup language)
 using JSX:
+```
 const heading = <h1 className="site-heading">Hello, React</h1>
+```
 without JSX:
+```
 const heading = React.createElement('h1', {className: 'site-heading'}, 'Hello, React!')
-
+```
 JSX is actually closer to JavaScript, not HTML, so there are a few key differences to note when writing it.
 
 className is used instead of class for adding CSS classes, as class is a reserved keyword in JavaScript.
