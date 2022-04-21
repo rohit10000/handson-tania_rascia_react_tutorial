@@ -1,4 +1,4 @@
-## Tania Rascia (React Tutorial: An Overview and Walkthrough)
+## Tania Rascia (React Tutorial: An Overview and Walkthrough) [read link](https://www.taniarascia.com/getting-started-with-react/)
 
 ### React prerequisites.
 
@@ -119,8 +119,7 @@ Some useful example code:
 	  this.setState({characters: [...this.state.characters, character]})
 	}
 ```
-### 5. Lifecycle methods:
-	<a href="https://reactjs.org/docs/react-component.html">Read link: https://reactjs.org/docs/react-component.html</a>
+### 5. Lifecycle methods: [Read link](https://reactjs.org/docs/react-component.html)
 
 ### 6. Building and Deploying a React App to gh-pages
 		- inside package.json
