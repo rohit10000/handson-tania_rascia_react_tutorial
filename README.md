@@ -1,13 +1,21 @@
 ## Tania Rascia (React Tutorial: An Overview and Walkthrough)
 
+<<<<<<< HEAD
 ### React prerequisites.
+=======
+###React prerequisites.
+>>>>>>> c1b56f05a8d05c9aab632d2438065366fe3fbb86
 Basic familiarity with HTML & CSS.
 Basic knowledge of JavaScript and programming.
 Basic understanding of the DOM.
 Familiarity with ES6 syntax and features.
 Node.js and npm installed globally.
 
+<<<<<<< HEAD
 ### Goal:
+=======
+###Goal:
+>>>>>>> c1b56f05a8d05c9aab632d2438065366fe3fbb86
 Learn about:
 	React: the React top level API
 	Babel: a JavaScript compiler that lets us use ES6+ in old browsers
