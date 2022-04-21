@@ -1,6 +1,7 @@
 ## Tania Rascia (React Tutorial: An Overview and Walkthrough)
 
 ### React prerequisites.
+
 Basic familiarity with HTML & CSS.
 Basic knowledge of JavaScript and programming.
 Basic understanding of the DOM.
@@ -8,6 +9,7 @@ Familiarity with ES6 syntax and features.
 Node.js and npm installed globally.
 
 ### Goal:
+
 Learn about:
 	React: the React top level API
 	Babel: a JavaScript compiler that lets us use ES6+ in old browsers
@@ -95,8 +97,7 @@ const heading = <h1>Hello, {name}</h1>
 		  }
 		}
 	```
-Note: You should always use keys when making lists in React, 
-as they help identify each list item.
+<i><b>Note:</b></i> You should always use keys when making lists in React, as they help identify each list item.
 
 ### 4. state
 	You must use this.setState() to modify an array. 
@@ -119,7 +120,7 @@ Some useful example code:
 	}
 ```
 ### 5. Lifecycle methods:
-	https://reactjs.org/docs/react-component.html.
+	<a href="https://reactjs.org/docs/react-component.html">Read link: https://reactjs.org/docs/react-component.html</a>
 
 ### 6. Building and Deploying a React App to gh-pages
 		- inside package.json
